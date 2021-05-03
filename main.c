@@ -6,7 +6,7 @@
 /*   By: cgutierr <cgutierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 19:03:36 by cgutierr          #+#    #+#             */
-/*   Updated: 2021/05/03 16:02:07 by cgutierr         ###   ########.fr       */
+/*   Updated: 2021/05/03 16:17:53 by cgutierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	main()
 
 	// FT_READ
 	char buffer2[15];
-	printf("**ft_read**\n");
+	printf("\n**ft_read**\n");
 	fflush(stdout);
 	int nbytes2 = ft_read(1, buffer2, 15);
 	printf("N Bytes = %d || STRING = %s\n", nbytes2, buffer2);
