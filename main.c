@@ -6,7 +6,7 @@
 /*   By: cgutierr <cgutierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 19:03:36 by cgutierr          #+#    #+#             */
-/*   Updated: 2021/05/03 15:58:02 by cgutierr         ###   ########.fr       */
+/*   Updated: 2021/05/03 16:02:07 by cgutierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	main()
 	char *strtodupinto = NULL;
 	char  *strtodupinto2 = NULL; 
 	printf("\n**strdup**\n%s\t<=\t%s\n", strtodupinto ,strtodup);
-	//strtodupinto = ft_strdup(strtodup);
+	strtodupinto = ft_strdup(strtodup);
 	printf("%s\n", strtodupinto);
 	// STRDUP
 	printf("**strdup**\n%s\t<=\t%s\n", strtodupinto2 ,strtodup);
