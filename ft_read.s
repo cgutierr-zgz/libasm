@@ -2,9 +2,9 @@ section .text
 extern ___error
 global _ft_read
 
-;0x2000003
+;0x2000003 ; read en MAC
 _ft_read:
-	mov rax, 0x2000003
+	mov rax, 0x2000003 ; pues eso
 	
 	syscall
 	jc error
