@@ -20,7 +20,6 @@ DAY			=	$(shell date +'%d/%m/%Y %H:%M')
 #Vuestro código debe permitir la lectura de la variable errno (de <errno.h>) desde un fichero .c
 #Para esto, está autorizado extern ___error
 
-
 # Escribir:
 #	◦ ft_strlen (man 3 strlen)
 #	◦ ft_strcpy (man 3 strcpy)
@@ -44,77 +43,51 @@ DAY			=	$(shell date +'%d/%m/%Y %H:%M')
 #• ft_list_remove_if (Como la de la piscina)
 
 
-NAME		=	libasm.a
+NAME			=	libasm.a
 
+SRCS			=	ft_strlen.s \
+					ft_strcpy.s \
+					ft_strcmp.s \
+					ft_write.s \
+					ft_read.s \
+					ft_strdup.s
 
-
-SRCS			=	ft_memset.c ft_strrchr.c \
-					ft_bzero.c ft_strnstr.c \
-					ft_memcpy.c ft_strncmp.c \
-					ft_memccpy.c ft_atoi.c \
-					ft_memmove.c ft_isalpha.c \
-					ft_memchr.c ft_isdigit.c \
-					ft_memcmp.c ft_isalnum.c \
-					ft_strlen.c ft_isascii.c \
-					ft_strlcpy.c ft_isprint.c \
-					ft_strlcat.c ft_toupper.c \
-					ft_strchr.c ft_tolower.c \
-					ft_calloc.c ft_strdup.c \
-					ft_substr.c \
-					ft_strjoin.c \
-					ft_strtrim.c \
-					ft_split.c \
-					ft_itoa.c \
-					ft_strmapi.c \
-					ft_putchar_fd.c \
-					ft_putstr_fd.c \
-					ft_putendl_fd.c \
-					ft_putnbr_fd.c 
-
-BONUS			=	ft_lstnew.c \
-					ft_lstadd_front.c \
-					ft_lstsize.c \
-					ft_lstlast.c \
-					ft_lstadd_back.c \
-					ft_lstdelone.c \
-					ft_lstclear.c \
-					ft_lstiter.c \
-					ft_lstmap.c 
-
-HEADER			=	libft.h
+HEADER			=	libasm.h
 					
-OBJS			=	$(SRCS:.c=.o)
+OBJS			=	$(SRCS:.s=.o)
 
-BONUS_OBJS		=	$(BONUS:.c=.o)
+SC				=	nasm
 
-CC				=	gcc
+S_FLAGS			=	-f macho64
 
 FLAGS			=	-Wall -Werror -Wextra
+
+%.o:			%.s
+				$(SC) $(S_FLAGS) $<
 
 RM				=	rm -f
 
 all:			$(NAME)
 
-$(NAME):
-				$(CC) $(FLAGS) -I $(HEADER) -c $(SRCS)
-				ar -rc $(NAME) $(OBJS)
-				ranlib $(NAME)
+$(NAME):		$(OBJS)
+				@echo $(YELLOW)Compiling libasm ... $(RESET)
+				ar rcs $(NAME) $(OBJS)
+
+exe:
+				gcc main.c -c
+				gcc main.o ft_strlen.o ft_strcpy.o ft_strcmp.o ft_write.o ft_read.o ft_strdup.o -o libasm.out
+				./libasm.out
 
 bonus:
-				$(CC) $(FLAGS) -I $(HEADER) -c $(BONUS)
-				ar -rc $(NAME) $(BONUS_OBJS)
-				ranlib $(NAME)
+				@echo $(RED)Haha lol ... $(RESET)
 
 clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
+				$(RM) $(OBJS)
 
 fclean:			clean
 				$(RM) $(NAME)
 
 re:				fclean all
-
-
-
 
 #Colors
 BLACK		:="\033[0;30m"
@@ -145,13 +118,5 @@ git:
 				@git commit -m "$(DAY)" || true 
 				@echo $(YELLOW)GIT push ... $(RESET)
 				@git push -u origin master || true 
-
-#Easily check the norm
-norminette:
-				@echo $(YELLOW)Norminette...
-				@echo $(GREEN)
-				@norminette $(SRCS) $(SRCS_B) $(HEADER) $(HEADER_B) ./libft/*.c ./libft/*.h | grep 'OK' || true 
-				@echo $(RED)
-				@norminette $(SRCS) $(SRCS_B) $(HEADER) $(HEADER_B) ./libft/*.c ./libft/*.h | grep 'Error!\|line:' || true
-						
+					
 .PHONY:			all clean fclean re
