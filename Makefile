@@ -73,8 +73,9 @@ $(NAME):		$(OBJS)
 				@echo $(YELLOW)Compiling libasm ... $(RESET)
 				ar rcs $(NAME) $(OBJS)
 
+#gcc $(FLAGS) -L. -lasm -o  libasm.out main.c
 exe:
-				gcc main.c -c
+				gcc $(FLAGS) main.c -c
 				gcc main.o ft_strlen.o ft_strcpy.o ft_strcmp.o ft_write.o ft_read.o ft_strdup.o -o libasm.out
 				./libasm.out
 
