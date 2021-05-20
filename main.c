@@ -6,7 +6,7 @@
 /*   By: cgutierr <cgutierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 19:03:36 by cgutierr          #+#    #+#             */
-/*   Updated: 2021/05/20 16:39:21 by cgutierr         ###   ########.fr       */
+/*   Updated: 2021/05/20 16:40:53 by cgutierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ ft_strcmp.s && nasm -f macho64 ft_write.s && nasm -f macho64 ft_read.s && nasm
 -f macho64 ft_strdup.s && gcc main.c -c && gcc main.o ft_strlen.o ft_strcpy.o
 ft_strcmp.o ft_write.o ft_read.o ft_strdup.o && ./a.out
 */
+
 /*
 void mytest()
 {
@@ -188,7 +189,8 @@ void check_ft_write()
 	int rlibc;
 	int rlibasm;
 
-	printf(RED "######################## FT_WRITE ##########################\n" RESET);
+	printf(RED "######################## FT_WRITE ##########################\n"
+	RESET);
 	printf("========================= Text try ========================>\n");
 	fd = open("write.txt", O_WRONLY);
 	rlibc = write(fd, buffer, 603);
@@ -236,7 +238,8 @@ void check_ft_read()
 	int rlibasm;
 	char buffer[900];
 
-	printf(RED "######################## FT_READ ###########################\n" RESET);
+	printf(RED "######################## FT_READ ###########################\n"
+	RESET);
 	printf("====================== Open field try =====================>\n");
 	fd = open("main.c", O_RDONLY);
 	rlibc = read(fd, buffer, 890);
