@@ -6,7 +6,7 @@
 /*   By: cgutierr <cgutierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 19:03:36 by cgutierr          #+#    #+#             */
-/*   Updated: 2021/05/20 16:07:43 by cgutierr         ###   ########.fr       */
+/*   Updated: 2021/05/20 16:15:45 by cgutierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ void mytest()
 	printf("Después=[%s]\n", strcpy(o_str2, o_str1));
 
 	// FT_STRCMP
-	printf(RED "\n**ft_strcmp**" RESET "\n%s,%s = %d\n", "sopa", "sopita de queso",
+	printf(RED "\n**ft_strcmp**" RESET "\n%s,%s = %d\n", "sopa",
+		   "sopita de queso",
 		   ft_strcmp("sopa", "sopita de queso"));
 	// STRCMP
 	printf(RED "**strcmp**" RESET "\n%s,%s = %d\n", "sopa", "sopita de queso",
@@ -119,7 +120,7 @@ void check_ft_tests()
 	char *buff;
 
 	buff = malloc(sizeof(char) * 1);
-	/*printf(RED "####################### FT_STRLEN ##########################\n"
+	printf(RED "####################### FT_STRLEN ##########################\n"
 	RESET);
 	printf("str = \"%s\" \n", "");
 	printf("%-20s: \"%lu\"\n", "strlen", strlen(""));
@@ -133,25 +134,25 @@ void check_ft_tests()
 	printf("%-20s: \"%lu\"\n", "strlen", strlen("0123456789"));
 	printf("%-20s: \"%zu\"\n", "ft_strlen", ft_strlen("0123456789"));
 	printf("------------------------------------------------------------\n\n");
-	*/
-	printf(RED "####################### FT_STRCMP ##########################\n" RESET);
+	printf(RED "####################### FT_STRCMP ##########################\n"
+	RESET);
 	printf("str1 = \"%s\"\nstr2 = \"%s\"\n", "", "");
 	printf("%-20s: \"%d\"\n", "strcmp", strcmp("", ""));
-	//printf("%-20s: \"%d\"\n", "ft_strcmp",  ft_strcmp("",  ""));
+	printf("%-20s: \"%d\"\n", "ft_strcmp",  ft_strcmp("",  ""));
 	printf("------------------------------------------------------------\n");
 	printf("str1 = %s\nstr2 = %s\n", "hola", "hola");
 	printf("%-20s: \"%d\"\n", "strcmp", strcmp("hola", "hola"));
-	//printf("%-20s: \"%d\"\n", "ft_strcmp",  ft_strcmp("hola",  "hola"));
+	printf("%-20s: \"%d\"\n", "ft_strcmp",  ft_strcmp("hola",  "hola"));
 	printf("------------------------------------------------------------\n");
 	printf("str1 = %s\nstr2 = %s\n", "hola mundo", "hola");
 	printf("%-20s: \"%d\"\n", "strcmp", strcmp("hola mundo", "hola"));
-	//printf("%-20s: \"%d\"\n", "ft_strcmp",  ft_strcmp("hola mundo",  "hola"));
+	printf("%-20s: \"%d\"\n", "ft_strcmp",  ft_strcmp("hola mundo",  "hola"));
 	printf("------------------------------------------------------------\n");
 	printf("str1 = %s\nstr2 = %s\n", "hola", "hola buenas");
 	printf("%-20s: \"%d\"\n", "strcmp", strcmp("hola", "hola buenas"));
 	printf("%-20s: \"%d\"\n", "ft_strcmp", ft_strcmp("hola", "hola buenas"));
 	printf("------------------------------------------------------------\n\n");
-	/*printf(RED "####################### FT_STRDUP ##########################\n"
+	printf(RED "####################### FT_STRDUP ##########################\n"
 	RESET);
 	printf("str = \"%s\" \n", "");
 	printf("%-20s: \"%s\"\n", "strdup", strdup(""));
@@ -172,12 +173,12 @@ void check_ft_tests()
 	printf(RED "####################### FT_STRCPY ##########################\n"
 	RESET);
 	printf("str = %s\nstrcpy = %s  ft_strcpy = %s\n", "Hola Mundo",
-	strcpy(buff, "Hola Mundo"), ft_strcpy(buff, "Hola Mundo"));
+		   strcpy(buff, "Hola Mundo"), ft_strcpy(buff, "Hola Mundo"));
 	printf("------------------------------------------------------------\n");
 	printf("str = %s\n\nstrcpy =\n%s\nft_strcpy =\n%s\n", "Lorem ipsum dolor s",
 		   strcpy(buff, "Lorem ipsum dolor s"),
 		   ft_strcpy(buff, "Lorem ipsum dolor s"));
-	printf("------------------------------------------------------------\n\n");*/
+	printf("------------------------------------------------------------\n\n");
 }
 
 void check_ft_write()
@@ -287,8 +288,8 @@ void check_ft_read()
 int main(void)
 {
 	mytest();
-	//check_ft_tests();
-	//check_ft_write();
-	//check_ft_read();
+	check_ft_tests();
+	check_ft_write();
+	check_ft_read();
 	return (0);
 }
