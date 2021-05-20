@@ -6,7 +6,7 @@
 /*   By: cgutierr <cgutierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 19:03:36 by cgutierr          #+#    #+#             */
-/*   Updated: 2021/05/20 16:15:45 by cgutierr         ###   ########.fr       */
+/*   Updated: 2021/05/20 16:39:21 by cgutierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ ft_strcmp.s && nasm -f macho64 ft_write.s && nasm -f macho64 ft_read.s && nasm
 -f macho64 ft_strdup.s && gcc main.c -c && gcc main.o ft_strlen.o ft_strcpy.o
 ft_strcmp.o ft_write.o ft_read.o ft_strdup.o && ./a.out
 */
-
+/*
 void mytest()
 {
 	// FT_STRLEN
@@ -166,16 +166,16 @@ void check_ft_tests()
 	printf("%-20s: \"%s\"\n", "strdup", strdup("coronavirus :("));
 	printf("%-20s: \"%s\"\n", "ft_strdup", ft_strdup("coronavirus :("));
 	printf("------------------------------------------------------------\n");
-	printf("str = %s\n\nstrdup =\n%s\nft_strdup =\n%s\n", "Lorem ipsum dolor s",
+	printf("str = %s\nstrdup = %s\nft_strdup = %s\n", "Lorem ipsum dolor s",
 		   strdup("Lorem ipsum dolor s"),
 		   ft_strdup("Lorem ipsum dolor s"));
 	printf("------------------------------------------------------------\n\n");
 	printf(RED "####################### FT_STRCPY ##########################\n"
 	RESET);
-	printf("str = %s\nstrcpy = %s  ft_strcpy = %s\n", "Hola Mundo",
+	printf("str = %s\nstrcpy = %s\nft_strcpy = %s\n", "Hola Mundo",
 		   strcpy(buff, "Hola Mundo"), ft_strcpy(buff, "Hola Mundo"));
 	printf("------------------------------------------------------------\n");
-	printf("str = %s\n\nstrcpy =\n%s\nft_strcpy =\n%s\n", "Lorem ipsum dolor s",
+	printf("str = %s\nstrcpy = %s\nft_strcpy = %s\n", "Lorem ipsum dolor s",
 		   strcpy(buff, "Lorem ipsum dolor s"),
 		   ft_strcpy(buff, "Lorem ipsum dolor s"));
 	printf("------------------------------------------------------------\n\n");
@@ -293,3 +293,4 @@ int main(void)
 	check_ft_read();
 	return (0);
 }
+*/
