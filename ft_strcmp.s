@@ -24,10 +24,10 @@ _ft_strcmp:
 		jmp .loop
 		
 	.differ:
-	;previo
+		;previo
 		;mov al, BYTE[rdi + r15]
 		;sub al, BYTE[rsi + r15]
-;previo
+		;previo
 		; comprar un value con otro cmp jne -> mov rax, -1 || 1 ; je -> mov rax, 0
 
 		cmp al, BYTE[rsi, + r15]
@@ -35,7 +35,7 @@ _ft_strcmp:
 		jl .menor
 
 		; cmp y si es mayor al o BYTE...  -> -1?
-		;cmp al, BYTE[rsi + r15]
+		;cmp al, BYTE[rsi + r15] ; no es necesario hacer dos cmp se puede hacer seguido
 
 
 		mov rax, 1
