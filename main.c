@@ -6,7 +6,7 @@
 /*   By: cgutierr <cgutierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 19:03:36 by cgutierr          #+#    #+#             */
-/*   Updated: 2021/05/20 15:50:07 by cgutierr         ###   ########.fr       */
+/*   Updated: 2021/05/20 15:54:36 by cgutierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,22 @@
 
 /*
 ** Compilar:
-**	nasm -f macho64 ft_strlen.s && nasm -f macho64 ft_strcpy.s && nasm -f macho64 ft_strcmp.s && nasm -f macho64 ft_write.s && nasm -f macho64 ft_read.s && nasm -f macho64 ft_strdup.s
+**	nasm -f macho64 ft_strlen.s && nasm -f macho64 ft_strcpy.s && nasm -f
+macho64 ft_strcmp.s && nasm -f macho64 ft_write.s && nasm -f macho64
+ft_read.s && nasm -f macho64 ft_strdup.s
 **	gcc main.c -c
-**	gcc main.o ft_strlen.o ft_strcpy.o ft_strcmp.o ft_write.o ft_read.o ft_strdup.o
+**	gcc main.o ft_strlen.o ft_strcpy.o ft_strcmp.o ft_write.o ft_read.o
+ft_strdup.o
 **	./a.out
 **
 ** ALL IN ONE:
-** nasm -f macho64 ft_strlen.s && nasm -f macho64 ft_strcpy.s && nasm -f macho64 ft_strcmp.s && nasm -f macho64 ft_write.s && nasm -f macho64 ft_read.s && nasm -f macho64 ft_strdup.s && gcc main.c -c && gcc main.o ft_strlen.o ft_strcpy.o ft_strcmp.o ft_write.o ft_read.o ft_strdup.o && ./a.out
+** nasm -f macho64 ft_strlen.s && nasm -f macho64 ft_strcpy.s && nasm -f macho64
+ft_strcmp.s && nasm -f macho64 ft_write.s && nasm -f macho64 ft_read.s && nasm
+-f macho64 ft_strdup.s && gcc main.c -c && gcc main.o ft_strlen.o ft_strcpy.o
+ft_strcmp.o ft_write.o ft_read.o ft_strdup.o && ./a.out
 */
 
+/*
 void mytest()
 {
 	// FT_STRLEN
@@ -71,9 +78,11 @@ void mytest()
 	// FT_STRCMP
 	char *str1234 = "sopato";
 	char *str234 = "sopa";
-	printf(RED "\n**ft_strcmp**" RESET "\n%s,%s = %d\n", str1234, str234, ft_strcmp(str1234, str234));
+	printf(RED "\n**ft_strcmp**" RESET "\n%s,%s = %d\n", str1234, str234,
+	ft_strcmp(str1234, str234));
 	// STRCMP
-	printf(RED "**strcmp**" RESET "\n%s,%s = %d\n\n", str1234, str234, strcmp(str1234, str234));
+	printf(RED "**strcmp**" RESET "\n%s,%s = %d\n\n", str1234, str234,
+	strcmp(str1234, str234));
 
 	// FT_STRDUP
 	char *strtodup = "Duplicame esto";
@@ -113,7 +122,8 @@ void check_ft_tests()
 	char *buff;
 
 	buff = malloc(sizeof(char) * 1);
-	printf(RED "####################### FT_STRLEN ##########################\n" RESET);
+	printf(RED "####################### FT_STRLEN ##########################\n"
+	RESET);
 	printf("str = \"%s\" \n", "");
 	printf("%-20s: \"%lu\"\n", "strlen", strlen(""));
 	printf("%-20s: \"%zu\"\n", "ft_strlen", ft_strlen(""));
@@ -126,7 +136,8 @@ void check_ft_tests()
 	printf("%-20s: \"%lu\"\n", "strlen", strlen("0123456789"));
 	printf("%-20s: \"%zu\"\n", "ft_strlen", ft_strlen("0123456789"));
 	printf("------------------------------------------------------------\n\n");
-	printf(RED "####################### FT_STRCMP ##########################\n" RESET);
+	printf(RED "####################### FT_STRCMP ##########################\n"
+	RESET);
 	printf("str1 = \"%s\"\nstr2 = \"%s\"\n", "", "");
 	printf("%-20s: \"%d\"\n", "strcmp", strcmp("", ""));
 	//printf("%-20s: \"%d\"\n", "ft_strcmp",  ft_strcmp("",  ""));
@@ -141,9 +152,10 @@ void check_ft_tests()
 	printf("------------------------------------------------------------\n");
 	printf("str1 = %s\nstr2 = %s\n", "hola", "hola buenas");
 	printf("%-20s: \"%d\"\n", "strcmp", strcmp("hola", "hola buenas"));
-	//printf("%-20s: \"%d\"\n", "ft_strcmp",  ft_strcmp("hola",  "hola buenas"));
+	//printf("%-20s: \"%d\"\n", "ft_strcmp",  ft_strcmp("hola", "hola buenas"));
 	printf("------------------------------------------------------------\n\n");
-	printf(RED "####################### FT_STRDUP ##########################\n" RESET);
+	printf(RED "####################### FT_STRDUP ##########################\n"
+	RESET);
 	printf("str = \"%s\" \n", "");
 	printf("%-20s: \"%s\"\n", "strdup", strdup(""));
 	printf("%-20s: \"%s\"\n", "ft_strdup", ft_strdup(""));
@@ -156,27 +168,30 @@ void check_ft_tests()
 	printf("%-20s: \"%s\"\n", "strdup", strdup("coronavirus :("));
 	printf("%-20s: \"%s\"\n", "ft_strdup", ft_strdup("coronavirus :("));
 	printf("------------------------------------------------------------\n");
-	printf("str = %s\n\nstrdup =\n%s\nft_strdup =\n%s\n", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed sagittis ligula. Sed sed egestas diam, quis lacinia justo. Vivamus et dolor et diam porttitor.",
-		   strdup("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed sagittis ligula. Sed sed egestas diam, quis lacinia justo. Vivamus et dolor et diam porttitor."),
-		   ft_strdup("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed sagittis ligula. Sed sed egestas diam, quis lacinia justo. Vivamus et dolor et diam porttitor."));
+	printf("str = %s\n\nstrdup =\n%s\nft_strdup =\n%s\n", "Lorem ipsum dolor s",
+		   strdup("Lorem ipsum dolor s"),
+		   ft_strdup("Lorem ipsum dolor s"));
 	printf("------------------------------------------------------------\n\n");
-	printf(RED "####################### FT_STRCPY ##########################\n" RESET);
-	printf("str = %s\nstrcpy = %s  ft_strcpy = %s\n", "Hola Mundo", strcpy(buff, "Hola Mundo"), ft_strcpy(buff, "Hola Mundo"));
+	printf(RED "####################### FT_STRCPY ##########################\n"
+	RESET);
+	printf("str = %s\nstrcpy = %s  ft_strcpy = %s\n", "Hola Mundo",
+	strcpy(buff, "Hola Mundo"), ft_strcpy(buff, "Hola Mundo"));
 	printf("------------------------------------------------------------\n");
-	printf("str = %s\n\nstrcpy =\n%s\nft_strcpy =\n%s\n", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae tincidunt quam. Sed quis mollis metus. Phasellus purus erat, commodo non vulputate vel, tincidunt ut nunc. Vivamus ac elementum diam. Orci varius natoque penatibus et magnis dis parturient montes egestas.",
-		   strcpy(buff, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae tincidunt quam. Sed quis mollis metus. Phasellus purus erat, commodo non vulputate vel, tincidunt ut nunc. Vivamus ac elementum diam. Orci varius natoque penatibus et magnis dis parturient montes egestas."),
-		   ft_strcpy(buff, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae tincidunt quam. Sed quis mollis metus. Phasellus purus erat, commodo non vulputate vel, tincidunt ut nunc. Vivamus ac elementum diam. Orci varius natoque penatibus et magnis dis parturient montes egestas."));
+	printf("str = %s\n\nstrcpy =\n%s\nft_strcpy =\n%s\n", "Lorem ipsum dolor s",
+		   strcpy(buff, "Lorem ipsum dolor s"),
+		   ft_strcpy(buff, "Lorem ipsum dolor s"));
 	printf("------------------------------------------------------------\n\n");
 }
 
 void check_ft_write()
 {
-	char buffer[604] = "In measure theory, a branch of mathematics, the Lebesgue measure, named after French mathematician Henri Lebesgue,\nis the standard way of assigning a measure to subsets of n-dimensional Euclidean space. For n = 1, 2, or 3, it\ncoincides with the standard measure of length, area, or volume. In general, it is also called n-dimensional\nvolume, n-volume, or simply volume.[1] It is used throughout real analysis, in particular to define Lebesgue\nintegration. Sets that can be assigned a Lebesgue measure are called Lebesgue-measurable; the measure of the\nLebesgue-measurable set A is here denoted by λ(A).";
+	char buffer[604] = "In measure theory, a branch of mathematics, the Lebesg";
 	int fd;
 	int rlibc;
 	int rlibasm;
 
-	printf(RED "######################## FT_WRITE ##########################\n" RESET);
+	printf(RED "######################## FT_WRITE ##########################\n"
+	RESET);
 	printf("========================= Text try ========================>\n");
 	fd = open("write.txt", O_WRONLY);
 	rlibc = write(fd, buffer, 603);
@@ -224,7 +239,8 @@ void check_ft_read()
 	int rlibasm;
 	char buffer[900];
 
-	printf(RED "######################## FT_READ ###########################\n" RESET);
+	printf(RED "######################## FT_READ ###########################\n"
+	RESET);
 	printf("====================== Open field try =====================>\n");
 	fd = open("main.c", O_RDONLY);
 	rlibc = read(fd, buffer, 890);
@@ -281,3 +297,4 @@ int main(void)
 	check_ft_read();
 	return (0);
 }
+*/

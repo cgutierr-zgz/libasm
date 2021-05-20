@@ -6,7 +6,7 @@
 /*   By: cgutierr <cgutierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 16:56:49 by cgutierr          #+#    #+#             */
-/*   Updated: 2021/05/20 15:48:45 by cgutierr         ###   ########.fr       */
+/*   Updated: 2021/05/20 15:51:18 by cgutierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <errno.h>
-
 
 # define RESET				"\x1b[0m"
 # define RED				"\x1b[31m"
