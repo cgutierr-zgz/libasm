@@ -32,10 +32,10 @@ _ft_strcmp:
 
 		cmp al, BYTE[rsi, + r15]
 		je .equal
+		jl .menor
 
 		; cmp y si es mayor al o BYTE...  -> -1?
-		cmp al, BYTE[rsi + r15]
-		jl .menor
+		;cmp al, BYTE[rsi + r15]
 
 
 		mov rax, 1
