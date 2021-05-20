@@ -6,7 +6,7 @@
 #    By: cgutierr <cgutierr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/28 18:02:40 by cgutierr          #+#    #+#              #
-#    Updated: 2021/05/20 15:46:59 by cgutierr         ###   ########.fr        #
+#    Updated: 2021/05/20 16:42:04 by cgutierr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,7 @@ bonus:
 				@echo $(RED)Haha nope ... $(RESET)
 
 clean:
-				$(RM) $(OBJS) ./libasm.out
+				$(RM) $(OBJS) ./libasm.out main.o
 
 fclean:			clean
 				$(RM) $(NAME)
