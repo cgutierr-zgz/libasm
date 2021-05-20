@@ -6,7 +6,7 @@
 /*   By: cgutierr <cgutierr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 19:03:36 by cgutierr          #+#    #+#             */
-/*   Updated: 2021/05/20 16:04:37 by cgutierr         ###   ########.fr       */
+/*   Updated: 2021/05/20 16:07:43 by cgutierr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ void mytest()
 	printf("Después=[%s]\n", strcpy(o_str2, o_str1));
 
 	// FT_STRCMP
-	printf(RED "\n**ft_strcmp**" RESET "\n%s,%s = %d\n", "hola", "hola buenas",
+	printf(RED "\n**ft_strcmp**" RESET "\n%s,%s = %d\n", "sopa", "sopita de queso",
 		   ft_strcmp("sopa", "sopita de queso"));
 	// STRCMP
-	printf(RED "**strcmp**" RESET "\n%s,%s = %d\n", "hola", "hola buenas",
+	printf(RED "**strcmp**" RESET "\n%s,%s = %d\n", "sopa", "sopita de queso",
 		   strcmp("sopa", "sopita de queso"));
 
 	// FT_STRDUP
