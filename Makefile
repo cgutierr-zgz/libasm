@@ -6,7 +6,7 @@
 #    By: cgutierr <cgutierr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/28 18:02:40 by cgutierr          #+#    #+#              #
-#    Updated: 2021/04/28 18:08:57 by cgutierr         ###   ########.fr        #
+#    Updated: 2021/05/20 15:46:59 by cgutierr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ SC				=	nasm
 
 S_FLAGS			=	-f macho64
 
-FLAGS			=	-Wall -Werror -Wextra
+FLAGS			=	-Wall -Werror -Wextra#-g3 -fsanitize=address
 
 %.o:			%.s
 				$(SC) $(S_FLAGS) $<
@@ -73,17 +73,17 @@ $(NAME):		$(OBJS)
 				@echo $(YELLOW)Compiling libasm ... $(RESET)
 				ar rcs $(NAME) $(OBJS)
 
-#gcc $(FLAGS) -L. -lasm -o  libasm.out main.c
+#gcc $(FLAGS) main.c -c
+#gcc main.o ft_strlen.o ft_strcpy.o ft_strcmp.o ft_write.o ft_read.o ft_strdup.o -o libasm.out	
 exe:
-				gcc $(FLAGS) main.c -c
-				gcc main.o ft_strlen.o ft_strcpy.o ft_strcmp.o ft_write.o ft_read.o ft_strdup.o -o libasm.out
-				./libasm.out
-
+				@echo $(GREEN)LIBASM TESTS$(RESET)
+				gcc $(FLAGS) -L. -lasm -o libasm.out main.c
+				./libasm.out			
 bonus:
-				@echo $(RED)Haha lol ... $(RESET)
+				@echo $(RED)Haha nope ... $(RESET)
 
 clean:
-				$(RM) $(OBJS)
+				$(RM) $(OBJS) ./libasm.out
 
 fclean:			clean
 				$(RM) $(NAME)
